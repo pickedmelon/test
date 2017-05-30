@@ -1,0 +1,11 @@
+with root
+
+yum install mysql gcc libxml2-devel libxml2 libxslt-devel mysql-devel mysql-server
+service mysqld start
+pip install nltk flask lxml sqlalchemy mysqldb mysql-python web.py
+python -m nltk.downloader punkt
+
+mysqladmin -u root password 'PASSWORD'
+## mysql
+
+GRANT ALL PRIVILEGES ON smartlaw.* TO 'law'@'localhost' IDENTIFIED BY 'watermelon';
