@@ -15,7 +15,7 @@ class Rawtext(Base):
     # Here we define columns for the table address.
     # Notice that each column is also a normal Python instance attribute.
     id = Column(INTEGER, primary_key=True)
-    uri = Column(String(256), nullable=False, unique=True)
+    uri = Column(String(128), nullable=False, unique=True)
     html = Column(LONGTEXT, nullable=False)
 
 
@@ -40,7 +40,7 @@ class Reference(Base):
 
 
 
-engine = create_engine('mysql://law:watermelon321@localhost/smartlaw')
+engine = create_engine('mysql://law:watermelon@localhost/smartlaw?charset=utf8')
 
 # Create all tables in the engine. This is equivalent to "Create Table"
 # statements in raw SQL.

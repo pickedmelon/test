@@ -4,7 +4,7 @@ import os
 import json
 import lxml.html as LH
 import reference_matcher
-PATH = '/Users/ymo/rawdata/'
+PATH = '/home/law/rawdata/'
 
 
 def generate_rawtext():
@@ -26,7 +26,7 @@ def generate_rawtext():
                 if (count + skip) % 1000 == 0:
                     print "imported [ %d ] skipped [%d / %d]" % (count, skip, len(imported))
 
-# add_bulk(generate_rawtext())
+add_bulk(generate_rawtext())
 
 def generate_rawtext():
     todo = get_unprocessed_rawtext_ids()

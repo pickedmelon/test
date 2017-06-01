@@ -18,6 +18,9 @@ def get_unprocessed_rawtext_ids():
     return [r[0] for r in execute_with_session("select distinct(rawtext.id) from rawtext left JOIN snippet "
                                                "on rawtext_id = rawtext.id where snippet.id is NULL")]
 
+def get_all_rawtext_ids():
+    return [r[0] for r in execute_with_session("select id from rawtext")]
+
 
 def add_bulk(gen, bulk_size=100):
     items = []
